@@ -1,0 +1,149 @@
+section.footer{
+  background-image: image-url("b-footer.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $dark;
+
+  .header-footer{
+    padding: 260px 0 40px;
+
+    img{
+      padding-top: 20px;
+    }
+
+    .midias-socias{
+      a {
+        display: block;
+        width: 57px;
+        border: 1px solid;
+        padding: 16px;
+        border-radius: 50%;
+        color: $white;
+        transition: all .2s;
+
+        &:hover{
+          border: 1px solid $yellow;
+          background: $yellow;
+        }
+
+        i {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .md-after:after{
+      content: '';
+      width: 40%;
+      border-bottom: 1px solid $white;
+      position: absolute;
+      left: 130px;
+      top: 0;
+      right: 0;
+      bottom: 45px;
+      border-style: dotted;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .slogan {
+      display: flex;
+      padding-top: 80px;
+
+      h2{
+        @include font('Concord', 25, 900);
+        text-transform: uppercase;
+        color: $white;
+
+        &:after{
+          content:"";
+          border-right: 1px solid;
+          position: absolute;
+          top: 83px;
+          bottom: 0;
+          left: 0;
+          right: 25px;
+          height: 43px;
+        }
+
+        span{
+          color: $yellow;
+        }
+      }
+
+      span.hash {
+        @include font('Concord', 70, 300);
+        color: $yellow;
+        float: left;
+        position: relative;
+        bottom: 21px;
+        margin-right: 10px;
+        padding-top: 12px;
+      }
+    }
+
+    .txt-footer{
+      h3{
+        @include font('Concord', 34, 900);
+        color: $white;
+        padding-top: 60px;
+      }
+    }
+
+    .btn-footer {
+      padding-top: 55px;
+      a{
+        @include font('Concord', 18, 300);
+        text-transform: uppercase;
+        background: $yellow;
+        padding: 12px 40px;
+        line-height: 1.3rem;
+        border-radius: 0;
+        color: $dark;
+        @include hover-left-right(.5s, $yellow);
+
+        b{
+          @include font('Concord', 18, 900);
+        }
+      }
+    }
+
+    .creditos h4{
+      @include font('OpenSans', 14);
+      color: $white;
+      padding-top: 60px;
+    }
+
+    .menu-footer{
+      padding-top: 60px;
+      ul{
+        display: flex;
+      }
+
+      li{
+        padding: 0 13px;
+      }
+
+      a{
+        @include font('Concord', 16, 900);
+        text-transform: uppercase;
+        color: $white;
+        transition: all .3s;
+        padding-bottom: 3px;
+
+        &:hover{
+          text-decoration: none;
+          border-bottom: 3px solid $yellow;
+        }
+      }
+    }
+  }
+
+  .content-footer{
+    z-index: 999;
+  }
+
+}
+
+

@@ -1,0 +1,267 @@
+section.kombi{
+  position: relative;
+
+  .container, .row{
+    position: relative;
+    height: 100%;
+  }
+  .kmb-intro{
+    position: absolute;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .mask-kmb {
+    //background-image: image-url("home/banner-kmb.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background: $dark-font;
+    height: 261px;
+    img{
+      max-width: 100%;
+    }
+  }
+
+  .slogan{
+    display: flex;
+    padding-top: 80px;
+    span.hash{
+      @include font('Concord', 70, 300);
+      color: $yellow;
+      float: left;
+      position: relative;
+      bottom: 21px;
+      margin-right: 10px;
+      padding-top: 12px;
+    }
+
+    h1{
+      @include font('Concord', 25, 900);
+      text-transform: uppercase;
+      color: $dark-font;
+
+      span{
+        color: $yellow;
+      }
+    }
+  }
+
+  .slider-down{
+    padding-top: 40px;
+    span{
+      border: 2px solid $black-btn;
+      padding: 18px 20px;
+      border-radius: 50%;
+
+      i{
+        color: $black-btn;
+      }
+    }
+  }
+}
+
+section.cases{
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(0,0,0,1);
+  background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,1)), color-stop(50%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff', GradientType=1 );
+
+  .desc-case{
+    label{
+      @include font('Concord', 18, 900);
+      color: $white;
+      padding-bottom: 30px;
+
+      &:before{
+        content: "";
+        border-bottom: 1px solid $white;
+        width: 80px;
+        position: absolute;
+        top: 0;
+        bottom: 650px;
+        left: -15%;
+        right: 0;
+      }
+    }
+
+    h2{
+      @include font('Concord', 70, 900);
+      color: $white;
+      width: 300px;
+    }
+
+    .hr-before{
+      width: 130px;
+      border: 1px solid #fff;
+      margin: 30px 0 40px 0;
+    }
+
+    p{
+      @include font('Open Sans', 16, 300);
+      line-height: 1.5rem;
+      color: $white;
+      width: 360px;
+    }
+  }
+
+  .scrollcase{
+    border: 2px solid $white;
+
+    .scrolldownhoney-c1, .scrolldownhoney-c2{
+      fill: $white;
+    }
+  }
+}
+
+section.portfolio{
+  position: relative;
+
+  background: rgba(255,174,24,1);
+  background: -moz-linear-gradient(left, rgba(255,174,24,1) 0%, rgba(255,205,24,1) 50%, rgba(235,235,235,1) 50%, rgba(235,235,235,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,174,24,1)), color-stop(50%, rgba(255,205,24,1)), color-stop(51%, rgba(235,235,235,1)), color-stop(100%, rgba(235,235,235,1)));
+  background: -webkit-linear-gradient(left, rgba(255,174,24,1) 0%, rgba(255,205,24,1) 50%, rgba(235,235,235,1) 50%, rgba(235,235,235,1) 100%);
+  background: -o-linear-gradient(left, rgba(255,174,24,1) 0%, rgba(255,205,24,1) 50%, rgba(235,235,235,1) 50%, rgba(235,235,235,1) 100%);
+  background: -ms-linear-gradient(left, rgba(255,174,24,1) 0%, rgba(255,205,24,1) 50%, rgba(235,235,235,1) 50%, rgba(235,235,235,1) 100%);
+  background: linear-gradient(to right, rgba(255,174,24,1) 0%, rgba(255,205,24,1) 50%, rgba(235,235,235,1) 50%, rgba(235,235,235,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae18', endColorstr='#ebebeb', GradientType=1 );
+
+  .img-portfolio{
+    padding-bottom: 20px;
+  }
+
+  .desc-portfolio {
+    label {
+      @include font('Concord', 18, 900);
+      color: $dark-font;
+      padding-bottom: 30px;
+
+      &:before{
+        content: "";
+        border-bottom: 1px solid $dark-font;
+        width: 50px;
+        position: absolute;
+        top: 0;
+        bottom: 435px;
+        left: -15%;
+        right: 0;
+      }
+    }
+
+    h2{
+      @include font('Concord', 70, 900);
+      color: $dark-font;
+      padding-bottom: 35px;
+    }
+
+    .btn-section {
+      padding-top: 60px;
+      a{
+        @include font('Concord', 18, 300);
+        text-transform: uppercase;
+        background: $dark-font;
+        padding: 20px 30px;
+        border-radius: 0;
+        color: $yellow;
+        @include hover-left-right(.5s, $dark-font, $dark);
+
+        b{
+          @include font('Concord', 18, 900);
+        }
+      }
+    }
+  }
+}
+
+section.agencia{
+  position: relative;
+  overflow: hidden;
+
+  .header-section{
+    padding: 50px 0 30px;
+  }
+
+  h1{
+    @include font('Concord', 70, 900);
+    line-height: 5rem;
+    padding-bottom: 30px;
+  }
+
+  p{
+    @include font('OpenSans', 16);
+    padding-bottom: 30px;
+    line-height: 1.3rem;
+
+    b{
+      font-weight: bold;
+    }
+  }
+
+  .btn-ag{
+    a{
+      @include font('Concord', 18, 300);
+      text-transform: uppercase;
+      background: $light-btn;
+      color: $dark;
+      padding: 20px 25px;
+      border: none;
+      border-radius: 0;
+      @include hover-left-right(.5s, $light-btn);
+
+      b{
+        font-weight: 900;
+      }
+    }
+  }
+
+  .slider-pictures{
+
+    img{
+      margin: 0 auto;
+    }
+
+    .slick-list{
+      width: 1000px;
+    }
+
+    .slick-slide{
+      width: 500px !important;
+    }
+
+    .slick-prev{
+      display: none !important;
+    }
+  }
+
+  .controls{
+    display: table;
+  }
+
+  .next{
+    border: 2px solid $dark;
+    padding: 18px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    bottom: 250px;
+    right: 0;
+    left: -80px;
+  }
+}
+
+.header-section{
+  padding: 50px 0 40px;
+}
+
+

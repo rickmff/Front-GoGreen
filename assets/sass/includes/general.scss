@@ -1,0 +1,359 @@
+////
+/// general.scss
+/// Aqui devem ser inseridas todas as classes e estilos universais o website
+////
+
+@include placeholder(13, '$black');
+@include selection($black, $white);
+
+body {
+  font: {
+    family: $main-font;
+    size: $rem-base;
+  }
+}
+
+// **************************************************
+// HEADER
+// Estilização da Header
+// **************************************************
+
+.header {
+  background: darken($site-main-color, 5%);
+  .logo {
+    background: $site-main-color;
+    padding: 30px;
+    display: inline-block;
+    width: auto;
+    @include transition(.3s ease-in);
+    &:hover {
+      background: darken($site-main-color, 10%);
+    }
+    img {
+      width: auto;
+      height: 30px;
+    }
+  }
+  .menu {
+    text-align: right;
+    color: $white;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.content {
+  div[class^='col']:not(.col-break) {
+    background: #eee;
+    border: 1px solid #ccc;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: $site-main-color;
+    font: {
+      family: 'Effra', $main-font;
+      weight: 900;
+      size: 22px;
+    }
+  }
+}
+
+@mixin hover-left-right($time, $cor, $cor2: null) {
+  background-size: 200% 100%;
+  $cor2: if($cor2, $cor2, darken($cor, 10%));
+  background-image: linear-gradient(to left, $cor 50%, $cor2 50%);
+  background-position: right bottom;
+  transition: background-position $time ease-in-out;
+  &:hover {
+    background-position: left bottom;
+  }
+}
+
+.logo-header{
+  padding: 60px 0;
+}
+
+.top-image{
+  height: 35px;
+  position: absolute;
+  top: 10px;
+  left: 51%;
+  bottom: 0;
+  right: 0;
+}
+
+.bottom-image, .top-section{
+  height: 100px;
+  position: absolute;
+  top: 89%;
+  left: 10px;
+  bottom: 0;
+  right: 0;
+}
+
+.top-section{
+  top: 175px !important;
+}
+
+section.intro-page{
+  overflow: hidden;
+  padding-bottom: 90px;
+
+  .desc-intro{
+    width: 420px;
+  }
+
+  h1{
+    @include font('Concord', 70, 900);
+    color: $dark-font;
+    padding: 140px 0 35px;
+  }
+
+  h2{
+    @include font('Concord', 48, 300);
+    color: $yellow;
+    padding-bottom: 30px;
+  }
+
+  p{
+    @include font('OpenSans', 16, 300);
+    padding-bottom: 30px;
+    line-height: 1.3rem;
+
+    b{
+      font-weight: bold;
+    }
+  }
+
+  img{
+    height: 102%;
+  }
+}
+
+section.parceiros{
+  padding-bottom: 90px;
+  h2 {
+    @include font('Concord', 48, 300);
+    text-transform: uppercase;
+    color: $dark-font;
+    padding-bottom: 20px;
+
+    span {
+      color: $yellow;
+    }
+  }
+
+  .slider-parceiros {
+    img{
+      max-width: 90%;
+    }
+
+    .slick-list{
+      width: 1140px;
+    }
+  }
+  .prev-img, .next-img {
+    position: absolute;
+    top: calc(50% - 25px);
+    border: 2px solid $dark;
+    padding: 18px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .prev-img { left: -60px;}
+  .next-img { right: -50px;}
+}
+
+section.message{
+  padding-bottom: 120px;
+  h2 {
+    @include font('Concord', 48, 300);
+    text-transform: uppercase;
+    color: $dark-font;
+    padding-bottom: 20px;
+
+    span {
+      color: $yellow;
+    }
+  }
+
+  input, textarea, select{
+    @include font('OpenSans', 16);
+  }
+
+  input.form-control, select.form-control{
+    height: 65px !important;
+    background: $light-gray;
+    border: none;
+    border-radius: 0;
+    padding: 20px;
+  }
+
+  select.form-control{
+    color: $dark-font !important;
+    width: 510px !important;
+  }
+
+  textarea.form-control{
+    height: 150px;
+    background: $light-gray;
+    border: none;
+    border-radius: 0;
+    padding: 20px;
+  }
+
+  a.btn-msg{
+    @include font('Concord', 16, 900);
+    text-transform: uppercase;
+    background: $yellow;
+    color: $dark-font;
+    border-radius: 0;
+    border: none;
+    padding: 20px 0;
+    @include hover-left-right(.5s, $yellow);
+  }
+
+  .form-control:focus {
+    box-shadow: 0 0 0 0.1rem rgba(16,33,42,.2);
+  }
+
+
+  .form-kb label{
+    padding: 5px 40px 0;
+  }
+
+  .lbl-slc{
+    padding: 0 !important;
+  }
+
+  .has-float-label {
+    @include float-label-container;
+    @include float-label;
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    input, select, textarea {
+      @include float-label-input;
+      font-size: inherit;
+      margin-bottom: 2px;
+      border: 0;
+      border-radius: 0;
+
+
+      @include float-label-scaled {
+        top: 20px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+//validations to internet explorer and edge
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .form-kb label {
+    display: none;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  .form-kb label {
+    display: none;
+  }
+}
+
+
+//scroll sections
+.wrap-scrolldownhoney{left: 50%; position: absolute; text-align: center; top: 95%; transform: translate(-50%, -50%)}
+.wrap-scrolldownhoney .scrolldownhoney{border: 2px solid $darkgray; border-radius: 30px; height: 45px; margin: 0 auto 8px; text-align: center; width: 30px; }
+.wrap-scrolldownhoney .scrolldownhoney-c1,
+.wrap-scrolldownhoney .scrolldownhoney-c2{animation-duration: 1.5s; animation-name: scrolldownhoney; animation-iteration-count: infinite; fill: $darkgray;}
+.wrap-scrolldownhoney .scrolldownhoney-c2{animation-delay: .75s;}
+
+@keyframes scrolldownhoney{
+  0% {
+    opacity: 0;
+    transform: translate(0, -8px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 8px);
+  }
+}
+
+.slider-bullet{
+    list-style: none;
+    display: flex;
+    position: absolute;
+    bottom: 10%;
+    right: 19%;
+  }
+
+  .slider-bullet li {
+    margin: 0 5px;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: -1px 1px $darkgray;
+    list-style: none;
+    background: $white;
+    width: 20px;
+    height: 20px;
+  }
+
+  .slider-bullet li.slick-active {
+    border: 0;
+    background: #69b10b;
+  }
+
+  .slider-bullet button {
+    border: 0;
+    font-size: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 0;
+    outline: none;
+  }
+
+.hidden-mobile {
+  @include breakpoint{
+    display: none!important;
+  }
+}
+
+.show-mobile {
+  display: none;
+  @include breakpoint{
+    display: block!important;
+  }
+}
+
+.text-center-mobile{
+  @include breakpoint{
+    text-align: center !important;
+  }
+}
+
+.show{ display:block; opacity:1 !important;}
+.gotop {background:$gray-bg; padding: .5em; position:fixed; bottom:0; right:2em; border-radius:4px 4px 0 0; cursor:pointer; opacity:0; color:$white; transition:all .4s;}
+
